@@ -5,6 +5,7 @@
 package halal_labirintus;
 
 import java.util.Random;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -124,6 +125,7 @@ public class Kalandjatek extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void inditoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inditoButtonActionPerformed
+        
         foszovegLabel.setText("<html>\n" +
         "<p>Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, amely a bal oldali fal mellett áll.<br> Hat doboz van rajta, egyikükre a te neved festették. Ha kiakarod nyitni a dobozt, lapozz a 270-re.<br> Ha inkább tovább haladsz észak felé, lapozz a 66-ra.</p>\n" +
         "</html>");
