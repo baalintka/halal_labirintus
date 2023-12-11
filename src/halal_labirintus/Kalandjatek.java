@@ -11,12 +11,14 @@ import javax.swing.JOptionPane;
 
     
 public class Kalandjatek extends javax.swing.JFrame {
-    int oldalszamlalo=0;
     
     public Kalandjatek() {
         initComponents();
         balLapoz.setVisible(false);
         jobblapoz.setVisible(false);
+        foszovegLabel.setText("                 Üdvözöllek a Wishes Kalandjátékban!");
+        elet.setText("1");
+        
     }
 
     /**
@@ -179,7 +181,7 @@ public class Kalandjatek extends javax.swing.JFrame {
         ugyesseg.setText(kezdoertekadas()+"");
         szerencse.setText(kezdoertekadas()+"");
         inditoButton.setVisible(false);
-        oldalszamlalo+=1;
+        
         oldal.setText("1. Oldal");
         balLapoz.setVisible(true);
         jobblapoz.setVisible(true);
@@ -197,9 +199,11 @@ public class Kalandjatek extends javax.swing.JFrame {
         foszovegLabel.setText("<html>\n" +
         "<p>A doboz teteje könnyedén nyílik. Benne két aranypénzt találsz, és egy üzenetet, amely egy kis pergamenen neked szól. Előbb zsebre vágod az aranyakat, aztán elolvasod az üzenetet: - „Jól tetted. Legalább volt annyi eszed, hogy megállj és elfogadd az ajándékot. Most azt tanácsolom neked, hogy keress és használj különféle tárgyakat, ha sikerrel akarsz áthaladni Halállabirintusomon.” Azaláírás Szukumvit. Megjegyzed a tanácsot, apródarabokra téped a pergament, és tovább mészészak felé.Lapozz a 66-ra.</p>\n" +
         "</html>");
+         if (oldal.getText()=="1. Oldal") {
         oldal.setText("270. Oldal");
         arany.setText("2");
         jobblapoz.setVisible(false);
+        }
         if (jobblapoz.getText()=="215. Oldal") {
             oldal.setText("215. Oldal");
             jobblapoz.setVisible(false);
@@ -213,7 +217,16 @@ public class Kalandjatek extends javax.swing.JFrame {
             int eletszoveg=Integer.parseInt(eletszoveg1);
             eletszoveg-=2;
             elet.setText(eletszoveg+"");
-            
+            if (eletszoveg<=0) {
+                JOptionPane.showMessageDialog(null, "Meghaltál!:(", "", 1);
+            }
+            }else if(jobblapoz.getText()=="56. Oldal"){
+            foszovegLabel.setText("<html>\n" +
+        "<p>Látod, hogy az akadály egy széles, barna, sziklaszerű tárgy. Megérinted, és meglepve tapasztalod, hogy lágy, szivacsszerű. Ha át szeretnél mászni rajta, lapozz a 373-ra. Ha ketté akarod vágni a kardoddal, lapozz a 215-re..</p>\n" +
+        "</html>");
+            oldal.setText("56. Oldal");
+            jobblapoz.setText("215. Oldal");
+            balLapoz.setText("373. Oldal");
         }
         
         
@@ -224,7 +237,7 @@ public class Kalandjatek extends javax.swing.JFrame {
         
         if (oldal.getText()=="1. Oldal"||oldal.getText()=="270. Oldal" ){
             oldal.setText("66. Oldal");
-            oldalszamlalo+=1;
+            
              foszovegLabel.setText("<html>\n" +
         "<p>Néhány perc gyaloglás után egy elágazáshoz érsz az alagútban. Egy, a falra festett fehér nyíl nyugatfelé mutat. A földön nedves lábnyomok jelzik, merre haladtak az előtted járók. Nehéz biztosan megmondani, de úgy tűnik, hogy három közülük a nyíl irányába halad, míg egyikük úgy döntött, hogy keletnek megy. Ha nyugat felé kívánsz menni, lapozz a 293-ra. Ha keletnek, lapozz a 56-re.</p>\n" +
         "</html>");
@@ -238,9 +251,9 @@ public class Kalandjatek extends javax.swing.JFrame {
             oldal.setText("293. Oldal");
             balLapoz.setText("373. Oldal");
             jobblapoz.setText("215. Oldal");
-            oldalszamlalo=4;
+            
         }
-        else if (oldal.getText()=="293. Oldal") {
+        else if (oldal.getText()=="293. Oldal"||oldal.getText()=="56. Oldal") {
             foszovegLabel.setText("<html>\n" +
         "<p>Fölmászol a lágy sziklára, attól tartasz, hogy bár-melyik pillanatban elnyelhet. Nehéz átvergődni rajta, mert puha anyagában alig tudod a lábadat emelni, de végül átvergődsz rajta. Megkönnyebbülten érsz újra szilárd talajra, és fordulsz kelet felé.</p>\n" +
         "</html>");
