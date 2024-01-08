@@ -1,24 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package halal_labirintus;
 
-import com.sun.source.tree.BreakTree;
 import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-    
 public class Kalandjatek extends javax.swing.JFrame {
-    
+
     public Kalandjatek() {
         initComponents();
         balLapoz.setVisible(false);
         jobblapoz.setVisible(false);
         foszovegLabel.setText("                 Üdvözöllek a Wishes Kalandjátékban!");
-        elet.setText("1");
         
+
     }
 
     /**
@@ -173,96 +167,94 @@ public class Kalandjatek extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void inditoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inditoButtonActionPerformed
-        
-        foszovegLabel.setText("<html>\n" +
-        "<p>Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, amely a bal oldali fal mellett áll.<br> Hat doboz van rajta, egyikükre a te neved festették. Ha kiakarod nyitni a dobozt, lapozz a 270-re.<br> Ha inkább tovább haladsz észak felé, lapozz a 66-ra.</p>\n" +
-        "</html>");
-        elet.setText(kezdoertekadas()+"");
-        ugyesseg.setText(kezdoertekadas()+"");
-        szerencse.setText(kezdoertekadas()+"");
+
+        foszovegLabel.setText("<html>\n"
+                + "<p>Miután öt percet haladtál lassan az alagútban, egy kőasztalhoz érsz, amely a bal oldali fal mellett áll.<br> Hat doboz van rajta, egyikükre a te neved festették. Ha kiakarod nyitni a dobozt, lapozz a 270-re.<br> Ha inkább tovább haladsz észak felé, lapozz a 66-ra.</p>\n"
+                + "</html>");
+        elet.setText(kezdoertekadas() + "");
+        ugyesseg.setText(kezdoertekadas() + "");
+        szerencse.setText(kezdoertekadas() + "");
         inditoButton.setVisible(false);
-        
+
         oldal.setText("1. Oldal");
         balLapoz.setVisible(true);
         jobblapoz.setVisible(true);
-        if (inditoButton.getText()=="Vége!") {
+        if (inditoButton.getText() == "Vége!") {
             System.exit(0);
         }
-        if (balLapoz.getText()=="373. Oldal"){
+        if (balLapoz.getText() == "373. Oldal") {
             System.exit(0);
         }
-        
-        
+
+
     }//GEN-LAST:event_inditoButtonActionPerformed
 
     private void jobblapozActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobblapozActionPerformed
-        foszovegLabel.setText("<html>\n" +
-        "<p>A doboz teteje könnyedén nyílik. Benne két aranypénzt találsz, és egy üzenetet, amely egy kis pergamenen neked szól. Előbb zsebre vágod az aranyakat, aztán elolvasod az üzenetet: - „Jól tetted. Legalább volt annyi eszed, hogy megállj és elfogadd az ajándékot. Most azt tanácsolom neked, hogy keress és használj különféle tárgyakat, ha sikerrel akarsz áthaladni Halállabirintusomon.” Azaláírás Szukumvit. Megjegyzed a tanácsot, apródarabokra téped a pergament, és tovább mészészak felé.Lapozz a 66-ra.</p>\n" +
-        "</html>");
-         if (oldal.getText()=="1. Oldal") {
-        oldal.setText("270. Oldal");
-        arany.setText("2");
-        jobblapoz.setVisible(false);
+        foszovegLabel.setText("<html>\n"
+                + "<p>A doboz teteje könnyedén nyílik. Benne két aranypénzt találsz, és egy üzenetet, amely egy kis pergamenen neked szól. Előbb zsebre vágod az aranyakat, aztán elolvasod az üzenetet: - „Jól tetted. Legalább volt annyi eszed, hogy megállj és elfogadd az ajándékot. Most azt tanácsolom neked, hogy keress és használj különféle tárgyakat, ha sikerrel akarsz áthaladni Halállabirintusomon.” Azaláírás Szukumvit. Megjegyzed a tanácsot, apródarabokra téped a pergament, és tovább mészészak felé.Lapozz a 66-ra.</p>\n"
+                + "</html>");
+        if (oldal.getText() == "1. Oldal") {
+            oldal.setText("270. Oldal");
+            arany.setText("2");
+            jobblapoz.setVisible(false);
         }
-        if (jobblapoz.getText()=="215. Oldal") {
+        if (jobblapoz.getText() == "215. Oldal") {
             oldal.setText("215. Oldal");
             jobblapoz.setVisible(false);
             balLapoz.setVisible(false);
             inditoButton.setVisible(true);
             inditoButton.setText("Vége!");
-            foszovegLabel.setText("<html>\n" +
-        "<p>Kardod könnyedén áthatol a spóragolyó vékonykülső burkán. Sűrű barna spórafelhő csap ki a golyóból, és körülvesz. Némelyik spóra a bőrödhöz tapad, és rettenetes viszketést okoz. Nagy daganatok nőnek az arcodon és karodon, és a bőröd mintha égne. 2 ÉLETERŐ pontot veszítesz. Vadul vakarózva átléped a leeresztett golyót, és keletnek veszed az utad.</p>\n" +
-        "</html>");
-            String eletszoveg1=elet.getText();  
-            int eletszoveg=Integer.parseInt(eletszoveg1);
-            eletszoveg-=2;
-            elet.setText(eletszoveg+"");
-            if (eletszoveg<=0) {
+            foszovegLabel.setText("<html>\n"
+                    + "<p>Kardod könnyedén áthatol a spóragolyó vékonykülső burkán. Sűrű barna spórafelhő csap ki a golyóból, és körülvesz. Némelyik spóra a bőrödhöz tapad, és rettenetes viszketést okoz. Nagy daganatok nőnek az arcodon és karodon, és a bőröd mintha égne. 2 ÉLETERŐ pontot veszítesz. Vadul vakarózva átléped a leeresztett golyót, és keletnek veszed az utad.</p>\n"
+                    + "</html>");
+            String eletszoveg1 = elet.getText();
+            int eletszoveg = Integer.parseInt(eletszoveg1);
+            eletszoveg -= 2;
+            elet.setText(eletszoveg + "");
+            if (eletszoveg <= 0) {
                 JOptionPane.showMessageDialog(null, "Meghaltál!:(", "", 1);
             }
-            }else if(jobblapoz.getText()=="56. Oldal"){
-            foszovegLabel.setText("<html>\n" +
-        "<p>Látod, hogy az akadály egy széles, barna, sziklaszerű tárgy. Megérinted, és meglepve tapasztalod, hogy lágy, szivacsszerű. Ha át szeretnél mászni rajta, lapozz a 373-ra. Ha ketté akarod vágni a kardoddal, lapozz a 215-re..</p>\n" +
-        "</html>");
+        } else if (jobblapoz.getText() == "56. Oldal") {
+            foszovegLabel.setText("<html>\n"
+                    + "<p>Látod, hogy az akadály egy széles, barna, sziklaszerű tárgy. Megérinted, és meglepve tapasztalod, hogy lágy, szivacsszerű. Ha át szeretnél mászni rajta, lapozz a 373-ra. Ha ketté akarod vágni a kardoddal, lapozz a 215-re..</p>\n"
+                    + "</html>");
             oldal.setText("56. Oldal");
             jobblapoz.setText("215. Oldal");
             balLapoz.setText("373. Oldal");
         }
-        
-        
+
+
     }//GEN-LAST:event_jobblapozActionPerformed
 
     private void balLapozActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balLapozActionPerformed
-        
-        
-        if (oldal.getText()=="1. Oldal"||oldal.getText()=="270. Oldal" ){
+
+        if (oldal.getText() == "1. Oldal" || oldal.getText() == "270. Oldal") {
             oldal.setText("66. Oldal");
-            
-             foszovegLabel.setText("<html>\n" +
-        "<p>Néhány perc gyaloglás után egy elágazáshoz érsz az alagútban. Egy, a falra festett fehér nyíl nyugatfelé mutat. A földön nedves lábnyomok jelzik, merre haladtak az előtted járók. Nehéz biztosan megmondani, de úgy tűnik, hogy három közülük a nyíl irányába halad, míg egyikük úgy döntött, hogy keletnek megy. Ha nyugat felé kívánsz menni, lapozz a 293-ra. Ha keletnek, lapozz a 56-re.</p>\n" +
-        "</html>");
+
+            foszovegLabel.setText("<html>\n"
+                    + "<p>Néhány perc gyaloglás után egy elágazáshoz érsz az alagútban. Egy, a falra festett fehér nyíl nyugatfelé mutat. A földön nedves lábnyomok jelzik, merre haladtak az előtted járók. Nehéz biztosan megmondani, de úgy tűnik, hogy három közülük a nyíl irányába halad, míg egyikük úgy döntött, hogy keletnek megy. Ha nyugat felé kívánsz menni, lapozz a 293-ra. Ha keletnek, lapozz a 56-re.</p>\n"
+                    + "</html>");
             balLapoz.setText("293. Oldal");
             jobblapoz.setText("56. Oldal");
-            jobblapoz.setVisible(true);  
-        }else if(oldal.getText()=="66. Oldal") {
-            foszovegLabel.setText("<html>\n" +
-        "<p>Látod, hogy az akadály egy széles, barna, sziklaszerű tárgy. Megérinted, és meglepve tapasztalod, hogy lágy, szivacsszerű. Ha át szeretnél mászni rajta, lapozz a 373-ra. Ha ketté akarod vágni a kardoddal, lapozz a 215-re.</p>\n" +
-        "</html>");
+            jobblapoz.setVisible(true);
+        } else if (oldal.getText() == "66. Oldal") {
+            foszovegLabel.setText("<html>\n"
+                    + "<p>Látod, hogy az akadály egy széles, barna, sziklaszerű tárgy. Megérinted, és meglepve tapasztalod, hogy lágy, szivacsszerű. Ha át szeretnél mászni rajta, lapozz a 373-ra. Ha ketté akarod vágni a kardoddal, lapozz a 215-re.</p>\n"
+                    + "</html>");
             oldal.setText("293. Oldal");
             balLapoz.setText("373. Oldal");
             jobblapoz.setText("215. Oldal");
-            
+
+        } else if (oldal.getText() == "293. Oldal" || oldal.getText() == "56. Oldal") {
+            foszovegLabel.setText("<html>\n"
+                    + "<p>Fölmászol a lágy sziklára, attól tartasz, hogy bár-melyik pillanatban elnyelhet. Nehéz átvergődni rajta, mert puha anyagában alig tudod a lábadat emelni, de végül átvergődsz rajta. Megkönnyebbülten érsz újra szilárd talajra, és fordulsz kelet felé.</p>\n"
+                    + "</html>");
+            jobblapoz.setVisible(false);
+            balLapoz.setVisible(false);
+            inditoButton.setVisible(true);
+            inditoButton.setText("Vége!");
         }
-        else if (oldal.getText()=="293. Oldal"||oldal.getText()=="56. Oldal") {
-            foszovegLabel.setText("<html>\n" +
-        "<p>Fölmászol a lágy sziklára, attól tartasz, hogy bár-melyik pillanatban elnyelhet. Nehéz átvergődni rajta, mert puha anyagában alig tudod a lábadat emelni, de végül átvergődsz rajta. Megkönnyebbülten érsz újra szilárd talajra, és fordulsz kelet felé.</p>\n" +
-        "</html>");
-           jobblapoz.setVisible(false);
-           balLapoz.setVisible(false);
-           inditoButton.setVisible(true);
-           inditoButton.setText("Vége!");
-        }
-        
+
     }//GEN-LAST:event_balLapozActionPerformed
 
     /**
@@ -323,7 +315,7 @@ public class Kalandjatek extends javax.swing.JFrame {
     private int kezdoertekadas() {
         int randomSzam;
         Random rnd = new Random();
-        randomSzam=rnd.nextInt(1,15);
+        randomSzam = rnd.nextInt(1, 15);
         return randomSzam;
     }
 }
